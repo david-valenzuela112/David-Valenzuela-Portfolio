@@ -1,10 +1,19 @@
 const content = {
   es: {
     toggleBtn: "English",
+    navAbout: "Sobre mí",
+    navProjects: "Proyectos Destacados",
+    navCertifications: "Certificaciones",
     heroSubtitle: "Estudiante de Ingeniería Mecatrónica enfocado en Sistemas Embebidos, Inteligencia Artificial y Robótica.",
     aboutTitle: "Sobre Mí",
     aboutDesc: "Soy un estudiante de Ingeniería en Mecatrónica con experiencia práctica en manufactura, ensamblaje, pruebas y validación de sistemas mecánicos. He coordinado equipos multidisciplinarios, gestionando recursos y dado seguimiento a requerimientos y actividades de ingeniería. Destaco por mi capacidad de resolver problemas, trabajar en equipo y aprender en entornos prácticos. Cuento con experiencia académica internacional e inglés C1.",
     projectsTitle: "Proyectos Destacados",
+    certTitle: "Certificaciones & Reconocimientos",
+    certifications: [
+      { name: "Nivel de Inglés Avanzado C1", issuer: "Certificación Internacional" },
+      { name: "Premio Crash and Burn (2025)", issuer: "NASA Human Exploration Rover Challenge" },
+      { name: "Intercambio Académico Internacional", issuer: "University of Ottawa, Canada" }
+    ],
     projects: [
       {
         title: "Liderazgo y Manufactura de Rover (NASA)",
@@ -61,10 +70,19 @@ const content = {
   },
   en: {
     toggleBtn: "Español",
+    navAbout: "About Me",
+    navProjects: "Featured Projects",
+    navCertifications: "Certifications",
     heroSubtitle: "Mechatronics Engineering Student focused on Embedded Systems, AI, and Robotics.",
     aboutTitle: "About Me",
     aboutDesc: "I'm a Mechatronics Engineering student driven by a passion for building systems that integrate hardware and software. My projects explore embedded systems, artificial intelligence, and electronic design, with a growing focus on aerospace, robotics, and intelligent automation.",
     projectsTitle: "Featured Projects",
+    certTitle: "Certifications & Awards",
+    certifications: [
+      { name: "C1 Advanced English Proficiency", issuer: "International Certification" },
+      { name: "Crash and Burn Award (2025)", issuer: "NASA Human Exploration Rover Challenge" },
+      { name: "International Academic Exchange", issuer: "University of Ottawa, Canada" }
+    ],
     projects: [
       {
         title: "Human-Powered Rover Design & Leadership",
@@ -125,11 +143,16 @@ let currentLang = 'es';
 function render() {
   const data = content[currentLang];
   document.getElementById('lang-toggle').innerText = data.toggleBtn;
+  document.getElementById('nav-about').innerText = data.navAbout;
+  document.getElementById('nav-projects').innerText = data.navProjects;
+  document.getElementById('nav-certifications').innerText = data.navCertifications;
   document.getElementById('hero-tagline').innerText = data.heroSubtitle;
   document.getElementById('about-title').innerText = data.aboutTitle;
   document.getElementById('about-desc').innerText = data.aboutDesc;
   document.getElementById('projects-title').innerText = data.projectsTitle;
+  document.getElementById('cert-title').innerText = data.certTitle;
 
+  // Render Proyectos
   const grid = document.getElementById('projects-grid');
   grid.innerHTML = '';
 
@@ -156,6 +179,19 @@ function render() {
     `;
 
     grid.appendChild(item);
+  });
+
+  // Render Certificaciones
+  const certList = document.getElementById('cert-list');
+  certList.innerHTML = '';
+  data.certifications.forEach(cert => {
+    const certCard = document.createElement('div');
+    certCard.className = 'cert-card';
+    certCard.innerHTML = `
+      <h3>${cert.name}</h3>
+      <p>${cert.issuer}</p>
+    `;
+    certList.appendChild(certCard);
   });
 
   setupScrollAnimations();
