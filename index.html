@@ -4,17 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>David Valenzuela | Mechatronics Showcase</title>
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Barra de Navegación -->
+  <!-- Barra de Navegación con Links de Desplazamiento -->
   <nav class="navbar">
     <div class="nav-container">
       <span class="nav-logo">David Valenzuela</span>
+      
+      <div class="nav-links">
+        <a href="#about" id="nav-about">Sobre mí</a>
+        <a href="#projects" id="nav-projects">Proyectos Destacados</a>
+        <a href="#certifications" id="nav-certifications">Certificaciones</a>
+      </div>
+
       <button id="lang-toggle" onclick="toggleLanguage()" class="apple-btn">English</button>
     </div>
   </nav>
@@ -49,6 +56,12 @@
     <div id="projects-grid" class="showcase-list"></div>
   </section>
 
-  <script src="script.js?v=5"></script>
+  <!-- Sección Certificaciones -->
+  <section id="certifications" class="container reveal">
+    <h2 id="cert-title" class="section-title"></h2>
+    <div id="cert-list" class="certifications-grid"></div>
+  </section>
+
+  <script src="script.js?v=6"></script>
 </body>
 </html>
