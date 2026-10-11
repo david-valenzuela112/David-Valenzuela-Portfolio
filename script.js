@@ -8,7 +8,7 @@ const content = {
     projects: [
       {
         title: "Liderazgo y Manufactura de Rover (NASA)",
-        image: "Foto-rover-26.png",
+        image: "./Foto-rover-26.png",
         bullets: [
           "Rover mecánico desarrollado bajo restricciones ingenieriles reales.",
           "Lideré equipo multidisciplinario a través de diseño, manufactura y validación.",
@@ -19,7 +19,7 @@ const content = {
       },
       {
         title: "Diseño de Fuente de Voltaje Regulable DC",
-        image: "Fotos-fuente-de-voltaje.png",
+        image: "./Fotos-fuente-de-voltaje.png",
         bullets: [
           "Fuente de voltaje DC funcional con salida constante de 5V y regulable de 0-12V.",
           "Diseño de circuito electrónico, PCB y ensamblaje físico.",
@@ -29,7 +29,7 @@ const content = {
       },
       {
         title: "Detección de Grietas por Machine Learning",
-        image: "Fotos-detección-de-grietas.png",
+        image: "./Fotos-detección-de-grietas.png",
         badge: "Accuracy: 92.11%",
         bullets: [
           "Modelo de visión computacional para clasificar grietas estructurales en concreto.",
@@ -39,7 +39,7 @@ const content = {
       },
       {
         title: "Gestión de Operaciones y Logística de Rover",
-        image: "Foto-crash-and-burn.png",
+        image: "./Foto-crash-and-burn.png",
         bullets: [
           "Coordinación de logística, compras y viajes para despliegue del rover.",
           "Elaboración de presupuestos y seguimiento financiero.",
@@ -49,7 +49,7 @@ const content = {
       },
       {
         title: "Reconocimiento de Dígitos Manuscritos",
-        image: "Foto-detección-de-numeros.png",
+        image: "./Foto-detección-de-numeros.png",
         badge: "Accuracy: 96.94%",
         bullets: [
           "Sistema de reconocimiento mediante Redes Neuronales Convolucionales (CNN).",
@@ -68,7 +68,7 @@ const content = {
     projects: [
       {
         title: "Human-Powered Rover Design & Leadership",
-        image: "Foto-rover-26.png",
+        image: "./Foto-rover-26.png",
         bullets: [
           "Human-powered rover developed under real-world competition constraints.",
           "Led a multidisciplinary team across design, manufacturing, and validation.",
@@ -78,7 +78,7 @@ const content = {
       },
       {
         title: "Robust Adjustable DC Power Supply Design",
-        image: "Fotos-fuente-de-voltaje.png",
+        image: "./Fotos-fuente-de-voltaje.png",
         bullets: [
           "Fully functional 0-12V adjustable and 5V constant DC power supply system.",
           "Designed electronic circuit and PCB layout.",
@@ -88,7 +88,7 @@ const content = {
       },
       {
         title: "Concrete Crack Detection by Machine Learning",
-        image: "Fotos-detección-de-grietas.png",
+        image: "./Fotos-detección-de-grietas.png",
         badge: "Accuracy: 92.11%",
         bullets: [
           "Computer vision model capable of detecting structural cracks in concrete.",
@@ -98,7 +98,7 @@ const content = {
       },
       {
         title: "Rover Logistics & Operations Management",
-        image: "Foto-crash-and-burn.png",
+        image: "./Foto-crash-and-burn.png",
         bullets: [
           "Supported development and deployment through logistics coordination.",
           "Managed procurement and travel logistics.",
@@ -108,7 +108,7 @@ const content = {
       },
       {
         title: "Handwritten Digit Recognition with CNN",
-        image: "Foto-detección-de-numeros.png",
+        image: "./Foto-detección-de-numeros.png",
         badge: "Accuracy: 96.94%",
         bullets: [
           "High-accuracy digit recognition system achieving 96.94% accuracy.",
@@ -134,20 +134,20 @@ function render() {
   grid.innerHTML = '';
 
   data.projects.forEach(project => {
-    const card = document.createElement('div');
-    card.className = 'glass-card project-card';
+    const item = document.createElement('div');
+    item.className = 'project-item reveal';
 
     let imgHTML = project.image ? `
-      <div class="img-wrapper">
+      <div class="project-media">
         <img src="${project.image}" alt="${project.title}" class="project-img" loading="lazy">
       </div>` : '';
     let badgeHTML = project.badge ? `<span class="apple-badge">${project.badge}</span>` : '';
     let bulletsHTML = project.bullets.map(b => `<li>${b}</li>`).join('');
     let tagsHTML = project.tags.map(t => `<span class="apple-tag">${t}</span>`).join('');
 
-    card.innerHTML = `
+    item.innerHTML = `
       ${imgHTML}
-      <div class="project-content">
+      <div class="project-info">
         <h3 class="project-title">${project.title}</h3>
         ${badgeHTML}
         <ul class="project-bullets">${bulletsHTML}</ul>
@@ -155,8 +155,10 @@ function render() {
       </div>
     `;
 
-    grid.appendChild(card);
+    grid.appendChild(item);
   });
+
+  setupScrollAnimations();
 }
 
 function toggleLanguage() {
@@ -164,7 +166,6 @@ function toggleLanguage() {
   render();
 }
 
-// Animación Reveal al hacer Scroll
 function setupScrollAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -179,5 +180,4 @@ function setupScrollAnimations() {
 
 document.addEventListener('DOMContentLoaded', () => {
   render();
-  setupScrollAnimations();
 });
