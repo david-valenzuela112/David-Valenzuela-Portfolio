@@ -8,7 +8,7 @@ const content = {
     projects: [
       {
         title: "Liderazgo y Manufactura de Rover (NASA)",
-        image: "Foto rover 26.jpg",
+        image: "Foto rover 26.png",
         bullets: [
           "Rover mecánico desarrollado bajo restricciones ingenieriles reales.",
           "Lideré equipo multidisciplinario a través de diseño, manufactura, documentación y validación.",
@@ -21,7 +21,7 @@ const content = {
       },
       {
         title: "Diseño de Fuente de Voltaje Regulable DC",
-        image: "Fotos fuente de voltaje.jpg",
+        image: "Fotos fuente de voltaje.png",
         bullets: [
           "Fuente de voltaje DC funcional con salida constante de 5V y salida regulable de 0-12V.",
           "Diseño de circuito electrónico y PCB.",
@@ -34,7 +34,7 @@ const content = {
       },
       {
         title: "Detección de Grietas por Machine Learning",
-        image: "Fotos detección de grietas.jpg",
+        image: "Fotos detección de grietas.png",
         badge: "Accuracy: 92.11%",
         bullets: [
           "Modelo de visión computacional capaz de detectar y clasificar grietas estructurales en concreto.",
@@ -47,7 +47,7 @@ const content = {
       },
       {
         title: "Gestión de Operaciones y Logística de Rover",
-        image: "Foto crash and burn.jpg",
+        image: "Foto crash and burn.png",
         bullets: [
           "Apoyo al desarrollo y despliegue de un rover mediante la coordinación de logística y recursos.",
           "Gestión de compras, proveedores y adquisición de materiales.",
@@ -60,7 +60,7 @@ const content = {
       },
       {
         title: "Reconocimiento de Dígitos Manuscritos",
-        image: "Foto detección de numeros.jpg",
+        image: "Foto detección de numeros.png",
         badge: "Accuracy: 96.94%",
         bullets: [
           "Sistema de reconocimiento de alta precisión, alcanzando 96.94% de precisión.",
@@ -82,7 +82,7 @@ const content = {
     projects: [
       {
         title: "Human-Powered Rover Design & Leadership",
-        image: "Foto rover 26.jpg",
+        image: "Foto rover 26.png",
         bullets: [
           "Human-powered rover developed under real-world competition constraints.",
           "Led a multidisciplinary team across design, manufacturing, and validation.",
@@ -95,7 +95,7 @@ const content = {
       },
       {
         title: "Robust Adjustable DC Power Supply Design",
-        image: "Fotos fuente de voltaje.jpg",
+        image: "Fotos fuente de voltaje.png",
         bullets: [
           "Fully functional 0-12V adjustable and 5V constant DC power supply system.",
           "Designed electronic circuit and PCB layout.",
@@ -108,7 +108,7 @@ const content = {
       },
       {
         title: "Concrete Crack Detection by Machine Learning",
-        image: "Fotos detección de grietas.jpg",
+        image: "Fotos detección de grietas.png",
         badge: "Accuracy: 92.11%",
         bullets: [
           "Computer vision model capable of detecting and classifying structural cracks in concrete.",
@@ -121,7 +121,7 @@ const content = {
       },
       {
         title: "Rover Logistics & Operations Management",
-        image: "Foto crash and burn.jpg",
+        image: "Foto crash and burn.png",
         bullets: [
           "Supported development and deployment of a competition rover through logistics and resource coordination.",
           "Managed procurement, supplier sourcing, and material acquisition.",
@@ -134,7 +134,7 @@ const content = {
       },
       {
         title: "Handwritten Digit Recognition with CNN",
-        image: "Foto detección de numeros.jpg",
+        image: "Foto detección de numeros.png",
         badge: "Accuracy: 96.94%",
         bullets: [
           "High-accuracy digit recognition system achieving 96.94% classification accuracy.",
