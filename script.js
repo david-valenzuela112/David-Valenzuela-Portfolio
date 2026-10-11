@@ -188,5 +188,4 @@ function toggleLanguage() {
   render();
 }
 
-// Carga inicial
 render();
