@@ -3,28 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>David Valenzuela | Mechatronics Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>David Valenzuela | Mechatronics Showcase</title>
+  <link rel="stylesheet" href="styles.css?v=3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Barra de Navegación Glassmorphic -->
+  <!-- Barra de Navegación Minimalista -->
   <nav class="navbar">
     <div class="nav-container">
-      <span class="nav-logo">DV</span>
-      <div class="nav-actions">
-        <button id="lang-toggle" onclick="toggleLanguage()" class="apple-btn">English</button>
-      </div>
+      <span class="nav-logo">David Valenzuela</span>
+      <button id="lang-toggle" onclick="toggleLanguage()" class="apple-btn">English</button>
     </div>
   </nav>
 
-  <!-- Hero Section estilo Apple -->
+  <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
-      <img src="Foto-David-Valenzuela.png" alt="David Valenzuela" class="hero-avatar">
+      <img src="./Foto-David-Valenzuela.png" alt="David Valenzuela" class="hero-avatar">
       <h1 class="hero-title">David Valenzuela</h1>
       <p id="hero-tagline" class="hero-subtitle"></p>
       <div class="institution-pills">
@@ -36,18 +34,18 @@
 
   <!-- Sección Sobre Mí -->
   <section id="about" class="container reveal">
-    <div class="glass-card about-card">
+    <div class="about-clean">
       <h2 id="about-title" class="section-title"></h2>
       <p id="about-desc" class="about-text"></p>
     </div>
   </section>
 
-  <!-- Grilla de Proyectos Estilo "Showcase" -->
-  <section id="projects" class="container reveal">
-    <h2 id="projects-title" class="section-title"></h2>
-    <div id="projects-grid" class="projects-grid"></div>
+  <!-- Sección Proyectos Estilo Presentación Abierta -->
+  <section id="projects" class="container">
+    <h2 id="projects-title" class="section-title reveal"></h2>
+    <div id="projects-grid" class="showcase-list"></div>
   </section>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
