@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>David Valenzuela | Mechatronics Showcase</title>
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -56,19 +56,20 @@
     <div id="projects-grid" class="showcase-list"></div>
   </section>
 
-  <!-- Sección Certificaciones -->
+  <!-- Sección Certificaciones (Carrusel con imágenes y tarjetas de texto) -->
   <section id="certifications" class="container reveal">
     <h2 id="cert-title" class="section-title"></h2>
     
-    <!-- Filtros de Categorías para el Carrusel -->
+    <!-- Filtros de Categorías -->
     <div class="cert-filters">
       <button class="filter-btn active" onclick="filterCertificates('all')" id="filter-all">Todos</button>
       <button class="filter-btn" onclick="filterCertificates('robotics')" id="filter-robotics">Robótica</button>
       <button class="filter-btn" onclick="filterCertificates('courses')" id="filter-courses">Cursos</button>
       <button class="filter-btn" onclick="filterCertificates('projects')" id="filter-projects">Proyectos</button>
+      <button class="filter-btn" onclick="filterCertificates('achievements')" id="filter-achievements">Logros</button>
     </div>
 
-    <!-- Carrusel de Imágenes PNG -->
+    <!-- Carrusel Unificado -->
     <div class="carousel-wrapper">
       <button class="carousel-arrow prev" onclick="moveCarousel(-1)">&#10094;</button>
       <div class="carousel-container" id="carousel-track">
@@ -76,16 +77,8 @@
       </div>
       <button class="carousel-arrow next" onclick="moveCarousel(1)">&#10095;</button>
     </div>
-
-    <!-- Subsección de Logros en Texto -->
-    <div class="text-achievements-container">
-      <h3 id="achievements-title" class="sub-section-title">Logros y Reconocimientos</h3>
-      <div id="text-achievements-grid" class="text-achievements-grid">
-        <!-- Render dinámico desde script.js -->
-      </div>
-    </div>
   </section>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>
