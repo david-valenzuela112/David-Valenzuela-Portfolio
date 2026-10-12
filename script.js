@@ -14,8 +14,8 @@ const content = {
     filterCourses: "Cursos",
     filterProjects: "Proyectos",
     filterAchievements: "Logros",
+    badgeAchievement: "Logro",
     certificates: [
-      // Tarjetas de Texto Requeridas
       {
         isTextOnly: true,
         title: "IELTS Academic C1",
@@ -36,8 +36,6 @@ const content = {
         issuer: "NASA Human Exploration Rover Challenge",
         detail: "Reconocimiento otorgado a la perseverancia y superación técnica del equipo."
       },
-
-      // Certificados PNG
       { name: "Certificación Universal Robots", issuer: "Universal Robots", category: "robotics", image: "cert-ur.png" },
       { name: "Programación UR20 / UR30", issuer: "Universal Robots", category: "robotics", image: "cert-ur20-30.png" },
       { name: "Evaluación de Riesgos Robóticos", issuer: "Universal Robots", category: "robotics", image: "cert-evaluacion-riesgos.png" },
@@ -45,13 +43,11 @@ const content = {
       { name: "Itinerario de Aplicaciones", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-aplicaciones.png" },
       { name: "Itinerario Profesional", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-profesional.png" },
       { name: "Itinerario Básico de Robótica", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-basico.png" },
-      
       { name: "Supervised Machine Learning", issuer: "Coursera / DeepLearning.AI", category: "courses", image: "cert-supervised-ml.png" },
       { name: "Neural Networks and Deep Learning", issuer: "Coursera / DeepLearning.AI", category: "courses", image: "cert-neural-networks.png" },
       { name: "MATLAB Onramp", issuer: "MathWorks", category: "courses", image: "cert-matlab-onramp.png" },
       { name: "Introduction to Linear Algebra", issuer: "MathWorks", category: "courses", image: "cert-matlab-linear-algebra.png" },
       { name: "Symbolic Math with MATLAB", issuer: "MathWorks", category: "courses", image: "cert-matlab-symbolic-math.png" },
-      
       { name: "Drone Testing Platform", issuer: "Proyecto de Ingeniería", category: "projects", image: "cert-drone-testing.png" },
       { name: "Computational Fluid Dynamics (CFD)", issuer: "Simulación de Spoiler", category: "projects", image: "cert-cfd-spoiler.png" }
     ],
@@ -124,8 +120,8 @@ const content = {
     filterCourses: "Courses",
     filterProjects: "Projects",
     filterAchievements: "Achievements",
+    badgeAchievement: "Achievement",
     certificates: [
-      // Tarjetas de Texto Requeridas
       {
         isTextOnly: true,
         title: "IELTS Academic C1",
@@ -137,6 +133,7 @@ const content = {
         isTextOnly: true,
         title: "International Baccalaureate Diploma",
         issuer: "International Baccalaureate (IB)",
+        category: "achievements",
         detail: "Rigorous global academic diploma focusing on analytical problem-solving."
       },
       {
@@ -145,8 +142,6 @@ const content = {
         issuer: "NASA Human Exploration Rover Challenge",
         detail: "Awarded for team technical resilience and perseverance under constraints."
       },
-
-      // Certificados PNG
       { name: "Universal Robots Certification", issuer: "Universal Robots", category: "robotics", image: "cert-ur.png" },
       { name: "UR20 / UR30 Programming", issuer: "Universal Robots", category: "robotics", image: "cert-ur20-30.png" },
       { name: "Robotic Risk Assessment", issuer: "Universal Robots", category: "robotics", image: "cert-evaluacion-riesgos.png" },
@@ -154,13 +149,11 @@ const content = {
       { name: "Applications Path", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-aplicaciones.png" },
       { name: "Professional Path", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-profesional.png" },
       { name: "Basic Robotics Path", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-basico.png" },
-      
       { name: "Supervised Machine Learning", issuer: "Coursera / DeepLearning.AI", category: "courses", image: "cert-supervised-ml.png" },
       { name: "Neural Networks and Deep Learning", issuer: "Coursera / DeepLearning.AI", category: "courses", image: "cert-neural-networks.png" },
       { name: "MATLAB Onramp", issuer: "MathWorks", category: "courses", image: "cert-matlab-onramp.png" },
       { name: "Introduction to Linear Algebra", issuer: "MathWorks", category: "courses", image: "cert-matlab-linear-algebra.png" },
       { name: "Symbolic Math with MATLAB", issuer: "MathWorks", category: "courses", image: "cert-matlab-symbolic-math.png" },
-      
       { name: "Drone Testing Platform", issuer: "Engineering Project", category: "projects", image: "cert-drone-testing.png" },
       { name: "Computational Fluid Dynamics (CFD)", issuer: "Spoiler Airflow Simulation", category: "projects", image: "cert-cfd-spoiler.png" }
     ],
@@ -224,47 +217,46 @@ let activeCategory = 'all';
 
 function render() {
   const data = content[currentLang];
-  document.getElementById('lang-toggle').innerText = data.toggleBtn;
-  document.getElementById('nav-about').innerText = data.navAbout;
-  document.getElementById('nav-projects').innerText = data.navProjects;
-  document.getElementById('nav-certifications').innerText = data.navCertifications;
-  document.getElementById('hero-tagline').innerText = data.heroSubtitle;
-  document.getElementById('about-title').innerText = data.aboutTitle;
-  document.getElementById('about-desc').innerText = data.aboutDesc;
-  document.getElementById('projects-title').innerText = data.projectsTitle;
-  document.getElementById('cert-title').innerText = data.certTitle;
+  
+  if (document.getElementById('lang-toggle')) document.getElementById('lang-toggle').innerText = data.toggleBtn;
+  if (document.getElementById('nav-about')) document.getElementById('nav-about').innerText = data.navAbout;
+  if (document.getElementById('nav-projects')) document.getElementById('nav-projects').innerText = data.navProjects;
+  if (document.getElementById('nav-certifications')) document.getElementById('nav-certifications').innerText = data.navCertifications;
+  if (document.getElementById('hero-tagline')) document.getElementById('hero-tagline').innerText = data.heroSubtitle;
+  if (document.getElementById('about-title')) document.getElementById('about-title').innerText = data.aboutTitle;
+  if (document.getElementById('about-desc')) document.getElementById('about-desc').innerText = data.aboutDesc;
+  if (document.getElementById('projects-title')) document.getElementById('projects-title').innerText = data.projectsTitle;
+  if (document.getElementById('cert-title')) document.getElementById('cert-title').innerText = data.certTitle;
 
-  document.getElementById('filter-all').innerText = data.filterAll;
-  document.getElementById('filter-robotics').innerText = data.filterRobotics;
-  document.getElementById('filter-courses').innerText = data.filterCourses;
-  document.getElementById('filter-projects').innerText = data.filterProjects;
-  document.getElementById('filter-achievements').innerText = data.filterAchievements;
+  if (document.getElementById('filter-all')) document.getElementById('filter-all').innerText = data.filterAll;
+  if (document.getElementById('filter-robotics')) document.getElementById('filter-robotics').innerText = data.filterRobotics;
+  if (document.getElementById('filter-courses')) document.getElementById('filter-courses').innerText = data.filterCourses;
+  if (document.getElementById('filter-projects')) document.getElementById('filter-projects').innerText = data.filterProjects;
+  if (document.getElementById('filter-achievements')) document.getElementById('filter-achievements').innerText = data.filterAchievements;
 
-  // Render Proyectos
   const grid = document.getElementById('projects-grid');
-  grid.innerHTML = '';
-  data.projects.forEach(project => {
-    const item = document.createElement('div');
-    item.className = 'project-item reveal';
-    let imgHTML = project.image ? `
-      <div class="project-media">
-        <img src="${project.image}" alt="${project.title}" class="project-img" loading="lazy">
-      </div>` : '';
-    let badgeHTML = project.badge ? `<span class="apple-badge">${project.badge}</span>` : '';
-    let bulletsHTML = project.bullets.map(b => `<li>${b}</li>`).join('');
-    let tagsHTML = project.tags.map(t => `<span class="apple-tag">${t}</span>`).join('');
+  if (grid) {
+    grid.innerHTML = '';
+    data.projects.forEach(project => {
+      const item = document.createElement('div');
+      item.className = 'project-item reveal';
+      let imgHTML = project.image ? `<div class="project-media"><img src="${project.image}" alt="${project.title}" class="project-img" loading="lazy"></div>` : '';
+      let badgeHTML = project.badge ? `<span class="apple-badge">${project.badge}</span>` : '';
+      let bulletsHTML = project.bullets.map(b => `<li>${b}</li>`).join('');
+      let tagsHTML = project.tags.map(t => `<span class="apple-tag">${t}</span>`).join('');
 
-    item.innerHTML = `
-      ${imgHTML}
-      <div class="project-info">
-        <h3 class="project-title">${project.title}</h3>
-        ${badgeHTML}
-        <ul class="project-bullets">${bulletsHTML}</ul>
-        <div class="tags-container">${tagsHTML}</div>
-      </div>
-    `;
-    grid.appendChild(item);
-  });
+      item.innerHTML = `
+        ${imgHTML}
+        <div class="project-info">
+          <h3 class="project-title">${project.title}</h3>
+          ${badgeHTML}
+          <ul class="project-bullets">${bulletsHTML}</ul>
+          <div class="tags-container">${tagsHTML}</div>
+        </div>
+      `;
+      grid.appendChild(item);
+    });
+  }
 
   renderCertificates();
   setupScrollAnimations();
@@ -273,6 +265,8 @@ function render() {
 function renderCertificates() {
   const data = content[currentLang];
   const track = document.getElementById('carousel-track');
+  if (!track) return;
+  
   track.innerHTML = '';
 
   const filtered = activeCategory === 'all' 
@@ -283,18 +277,16 @@ function renderCertificates() {
     const card = document.createElement('div');
     
     if (cert.isTextOnly) {
-      // Tarjeta de solo texto dentro del carrusel
       card.className = 'cert-item text-only-card';
       card.innerHTML = `
         <div class="text-card-content">
-          <span class="text-card-badge">Achievement</span>
+          <span class="text-card-badge">${data.badgeAchievement}</span>
           <h3 class="text-card-title">${cert.title}</h3>
           <p class="text-card-issuer">${cert.issuer}</p>
           <span class="text-card-detail">${cert.detail}</span>
         </div>
       `;
     } else {
-      // Tarjeta regular con imagen PNG
       card.className = 'cert-item';
       card.innerHTML = `
         <div class="cert-img-box">
@@ -313,19 +305,18 @@ function filterCertificates(category) {
   activeCategory = category;
   document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
   
-  if (category === 'all') document.getElementById('filter-all').classList.add('active');
-  if (category === 'robotics') document.getElementById('filter-robotics').classList.add('active');
-  if (category === 'courses') document.getElementById('filter-courses').classList.add('active');
-  if (category === 'projects') document.getElementById('filter-projects').classList.add('active');
-  if (category === 'achievements') document.getElementById('filter-achievements').classList.add('active');
+  const activeBtn = document.getElementById(`filter-${category}`);
+  if (activeBtn) activeBtn.classList.add('active');
 
   renderCertificates();
 }
 
 function moveCarousel(direction) {
   const container = document.getElementById('carousel-track');
-  const scrollAmount = 350;
-  container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  if (container) {
+    const scrollAmount = 350;
+    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
 }
 
 function toggleLanguage() {
@@ -345,6 +336,7 @@ function setupScrollAnimations() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
+/* Soporte Touch Swipe para Móviles */
 let touchStartX = 0;
 let touchEndX = 0;
 
