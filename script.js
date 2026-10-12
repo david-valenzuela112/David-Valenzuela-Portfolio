@@ -8,13 +8,36 @@ const content = {
     aboutTitle: "Sobre Mí",
     aboutDesc: "Soy un estudiante de Ingeniería en Mecatrónica con experiencia práctica en manufactura, ensamblaje, pruebas y validación de sistemas mecánicos. He coordinado equipos multidisciplinarios, gestionando recursos y dado seguimiento a requerimientos y actividades de ingeniería. Destaco por mi capacidad de resolver problemas, trabajar en equipo y aprender en entornos prácticos. Cuento con experiencia académica internacional e inglés C1.",
     projectsTitle: "Proyectos Destacados",
-    certTitle: "Certificaciones & Documentos",
-    achievementsTitle: "Logros y Reconocimientos",
+    certTitle: "Certificaciones & Logros",
     filterAll: "Todos",
     filterRobotics: "Robótica",
     filterCourses: "Cursos",
     filterProjects: "Proyectos",
+    filterAchievements: "Logros",
     certificates: [
+      // Tarjetas de Texto Requeridas
+      {
+        isTextOnly: true,
+        title: "IELTS Academic C1",
+        issuer: "IELTS Official",
+        category: "achievements",
+        detail: "Acreditación de dominio avanzado de idioma inglés en ámbito profesional e ingenieril."
+      },
+      {
+        isTextOnly: true,
+        title: "Diploma de Bachillerato Internacional",
+        issuer: "International Baccalaureate (IB)",
+        category: "achievements",
+        detail: "Programa académico de alto rigor internacional con enfoque analítico global."
+      },
+      {
+        isTextOnly: true,
+        title: "Premio Crash and Burn 2025 NASA",
+        issuer: "NASA Human Exploration Rover Challenge",
+        detail: "Reconocimiento otorgado a la perseverancia y superación técnica del equipo."
+      },
+
+      // Certificados PNG
       { name: "Certificación Universal Robots", issuer: "Universal Robots", category: "robotics", image: "cert-ur.png" },
       { name: "Programación UR20 / UR30", issuer: "Universal Robots", category: "robotics", image: "cert-ur20-30.png" },
       { name: "Evaluación de Riesgos Robóticos", issuer: "Universal Robots", category: "robotics", image: "cert-evaluacion-riesgos.png" },
@@ -31,28 +54,6 @@ const content = {
       
       { name: "Drone Testing Platform", issuer: "Proyecto de Ingeniería", category: "projects", image: "cert-drone-testing.png" },
       { name: "Computational Fluid Dynamics (CFD)", issuer: "Simulación de Spoiler", category: "projects", image: "cert-cfd-spoiler.png" }
-    ],
-    textAchievements: [
-      {
-        title: "IELTS Academic",
-        issuer: "Nivel C1 Acreditado",
-        detail: "Dominio avanzado de idioma inglés en ámbito profesional e ingenieril."
-      },
-      {
-        title: "Diploma de Bachillerato Internacional (IB)",
-        issuer: "International Baccalaureate",
-        detail: "Programa académico riguroso con orientación de estándares globales."
-      },
-      {
-        title: "Premio 'Crash and Burn' (2025)",
-        issuer: "NASA Human Exploration Rover Challenge",
-        detail: "Reconocimiento otorgado a la perseverancia y superación técnica del equipo."
-      },
-      {
-        title: "Intercambio Académico Internacional",
-        issuer: "University of Ottawa, Canada",
-        detail: "Experiencia universitaria internacional avanzada en ingeniería."
-      }
     ],
     projects: [
       {
@@ -117,13 +118,35 @@ const content = {
     aboutTitle: "About Me",
     aboutDesc: "I'm a Mechatronics Engineering student driven by a passion for building systems that integrate hardware and software. My projects explore embedded systems, artificial intelligence, and electronic design, with a growing focus on aerospace, robotics, and intelligent automation.",
     projectsTitle: "Featured Projects",
-    certTitle: "Certifications & Documents",
-    achievementsTitle: "Honors & Achievements",
+    certTitle: "Certifications & Achievements",
     filterAll: "All",
     filterRobotics: "Robotics",
     filterCourses: "Courses",
     filterProjects: "Projects",
+    filterAchievements: "Achievements",
     certificates: [
+      // Tarjetas de Texto Requeridas
+      {
+        isTextOnly: true,
+        title: "IELTS Academic C1",
+        issuer: "IELTS Official",
+        category: "achievements",
+        detail: "Accredited C1 advanced English proficiency in professional and engineering domains."
+      },
+      {
+        isTextOnly: true,
+        title: "International Baccalaureate Diploma",
+        issuer: "International Baccalaureate (IB)",
+        detail: "Rigorous global academic diploma focusing on analytical problem-solving."
+      },
+      {
+        isTextOnly: true,
+        title: "Crash and Burn Award 2025 NASA",
+        issuer: "NASA Human Exploration Rover Challenge",
+        detail: "Awarded for team technical resilience and perseverance under constraints."
+      },
+
+      // Certificados PNG
       { name: "Universal Robots Certification", issuer: "Universal Robots", category: "robotics", image: "cert-ur.png" },
       { name: "UR20 / UR30 Programming", issuer: "Universal Robots", category: "robotics", image: "cert-ur20-30.png" },
       { name: "Robotic Risk Assessment", issuer: "Universal Robots", category: "robotics", image: "cert-evaluacion-riesgos.png" },
@@ -140,28 +163,6 @@ const content = {
       
       { name: "Drone Testing Platform", issuer: "Engineering Project", category: "projects", image: "cert-drone-testing.png" },
       { name: "Computational Fluid Dynamics (CFD)", issuer: "Spoiler Airflow Simulation", category: "projects", image: "cert-cfd-spoiler.png" }
-    ],
-    textAchievements: [
-      {
-        title: "IELTS Academic",
-        issuer: "Accredited C1 Level",
-        detail: "Advanced English proficiency in professional and engineering domains."
-      },
-      {
-        title: "International Baccalaureate (IB) Diploma",
-        issuer: "International Baccalaureate",
-        detail: "Rigorous academic curriculum with global standard alignment."
-      },
-      {
-        title: "'Crash and Burn' Award (2025)",
-        issuer: "NASA Human Exploration Rover Challenge",
-        detail: "Awarded for team perseverance and technical resilience under constraints."
-      },
-      {
-        title: "International Academic Exchange",
-        issuer: "University of Ottawa, Canada",
-        detail: "Advanced international engineering coursework experience."
-      }
     ],
     projects: [
       {
@@ -232,12 +233,12 @@ function render() {
   document.getElementById('about-desc').innerText = data.aboutDesc;
   document.getElementById('projects-title').innerText = data.projectsTitle;
   document.getElementById('cert-title').innerText = data.certTitle;
-  document.getElementById('achievements-title').innerText = data.achievementsTitle;
 
   document.getElementById('filter-all').innerText = data.filterAll;
   document.getElementById('filter-robotics').innerText = data.filterRobotics;
   document.getElementById('filter-courses').innerText = data.filterCourses;
   document.getElementById('filter-projects').innerText = data.filterProjects;
+  document.getElementById('filter-achievements').innerText = data.filterAchievements;
 
   // Render Proyectos
   const grid = document.getElementById('projects-grid');
@@ -266,7 +267,6 @@ function render() {
   });
 
   renderCertificates();
-  renderTextAchievements();
   setupScrollAnimations();
 }
 
@@ -281,32 +281,31 @@ function renderCertificates() {
 
   filtered.forEach(cert => {
     const card = document.createElement('div');
-    card.className = 'cert-item';
-    card.innerHTML = `
-      <div class="cert-img-box">
-        <img src="${cert.image}" alt="${cert.name}" loading="lazy">
-      </div>
-      <h3>${cert.name}</h3>
-      <p>${cert.issuer}</p>
-    `;
+    
+    if (cert.isTextOnly) {
+      // Tarjeta de solo texto dentro del carrusel
+      card.className = 'cert-item text-only-card';
+      card.innerHTML = `
+        <div class="text-card-content">
+          <span class="text-card-badge">Achievement</span>
+          <h3 class="text-card-title">${cert.title}</h3>
+          <p class="text-card-issuer">${cert.issuer}</p>
+          <span class="text-card-detail">${cert.detail}</span>
+        </div>
+      `;
+    } else {
+      // Tarjeta regular con imagen PNG
+      card.className = 'cert-item';
+      card.innerHTML = `
+        <div class="cert-img-box">
+          <img src="${cert.image}" alt="${cert.name}" loading="lazy">
+        </div>
+        <h3>${cert.name}</h3>
+        <p>${cert.issuer}</p>
+      `;
+    }
+
     track.appendChild(card);
-  });
-}
-
-function renderTextAchievements() {
-  const data = content[currentLang];
-  const container = document.getElementById('text-achievements-grid');
-  container.innerHTML = '';
-
-  data.textAchievements.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'text-card';
-    card.innerHTML = `
-      <h4>${item.title}</h4>
-      <p>${item.issuer}</p>
-      <span>${item.detail}</span>
-    `;
-    container.appendChild(card);
   });
 }
 
@@ -318,6 +317,7 @@ function filterCertificates(category) {
   if (category === 'robotics') document.getElementById('filter-robotics').classList.add('active');
   if (category === 'courses') document.getElementById('filter-courses').classList.add('active');
   if (category === 'projects') document.getElementById('filter-projects').classList.add('active');
+  if (category === 'achievements') document.getElementById('filter-achievements').classList.add('active');
 
   renderCertificates();
 }
@@ -345,6 +345,29 @@ function setupScrollAnimations() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
+let touchStartX = 0;
+let touchEndX = 0;
+
+function setupTouchCarousel() {
+  const track = document.getElementById('carousel-track');
+  if (!track) return;
+
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    const swipeThreshold = 50;
+    if (touchStartX - touchEndX > swipeThreshold) {
+      moveCarousel(1);
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+      moveCarousel(-1);
+    }
+  }, { passive: true });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   render();
+  setupTouchCarousel();
 });
