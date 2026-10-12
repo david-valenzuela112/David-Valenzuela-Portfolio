@@ -5,8 +5,8 @@
   --text-secondary: #C5D1E0;
   --accent-cyan: #00B4D8;
   --accent-glow: rgba(0, 180, 216, 0.25);
-  --card-overlay: rgba(28, 37, 65, 0.5);
-  --border-light: rgba(255, 255, 255, 0.12);
+  --card-overlay: rgba(28, 37, 65, 0.6);
+  --border-light: rgba(255, 255, 255, 0.15);
   --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -37,7 +37,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(11, 19, 43, 0.88);
+  background: rgba(11, 19, 43, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
@@ -134,33 +134,42 @@ body {
   font-weight: 400;
 }
 
+/* Cajas UDEM y uOttawa Más Grandes y Visibles */
 .institution-pills {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.8rem;
+  flex-wrap: wrap;
 }
 
 .pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--border-light);
-  padding: 0.6rem 1.6rem;
+  gap: 1rem;
+  background: rgba(28, 37, 65, 0.8);
+  border: 1px solid var(--accent-cyan);
+  padding: 0.8rem 2.2rem;
   border-radius: 980px;
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--text-primary);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 180, 216, 0.4);
 }
 
 .pill img {
-  height: 32px;
+  height: 42px;
   width: auto;
   object-fit: contain;
   background: #ffffff;
-  padding: 3px 8px;
-  border-radius: 6px;
+  padding: 4px 10px;
+  border-radius: 8px;
 }
 
 /* Containers */
@@ -478,10 +487,10 @@ body {
 .carousel-arrow.prev { left: -20px; }
 .carousel-arrow.next { right: -20px; }
 
-/* Animaciones */
+/* Animación Reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -491,10 +500,16 @@ body {
 }
 
 /* ===================================================
-   OPTIMIZACIONES Y ADAPTACIÓN PARA MÓVILES (SMARTPHONES)
+   CORRECCIÓN DE VISIBILIDAD MÓVIL (MÁXIMA COMPATIBILIDAD)
    =================================================== */
 
 @media (max-width: 768px) {
+  /* Asegura que los elementos en celular no se mantengan ocultos si falla la animación */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .nav-container {
     padding: 0.8rem 1rem;
   }
@@ -508,7 +523,7 @@ body {
   }
 
   .hero-section {
-    padding: 6rem 1rem 3rem;
+    padding: 7rem 1rem 3rem;
     min-height: auto;
   }
 
@@ -518,7 +533,7 @@ body {
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
   }
 
   .hero-subtitle {
@@ -526,26 +541,29 @@ body {
     padding: 0 0.5rem;
   }
 
+  /* Ajuste responsivo de UDEM y uOttawa en Celular */
   .institution-pills {
-    flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .pill {
-    font-size: 0.9rem;
-    padding: 0.5rem 1.1rem;
+    font-size: 1rem;
+    padding: 0.6rem 1.4rem;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
   }
 
   .pill img {
-    height: 24px;
+    height: 32px;
   }
 
   .container {
-    padding: 3.5rem 1rem;
+    padding: 3rem 1rem;
   }
 
   .section-title {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
     margin-bottom: 2rem;
   }
 
@@ -587,9 +605,9 @@ body {
   }
 
   .cert-item {
-    min-width: 260px;
-    max-width: 280px;
-    padding: 1rem;
+    min-width: 270px;
+    max-width: 290px;
+    padding: 1.2rem;
   }
 
   .cert-img-box {
