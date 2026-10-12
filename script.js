@@ -239,7 +239,7 @@ function render() {
     grid.innerHTML = '';
     data.projects.forEach(project => {
       const item = document.createElement('div');
-      item.className = 'project-item reveal';
+      item.className = 'project-item reveal active';
       let imgHTML = project.image ? `<div class="project-media"><img src="${project.image}" alt="${project.title}" class="project-img" loading="lazy"></div>` : '';
       let badgeHTML = project.badge ? `<span class="apple-badge">${project.badge}</span>` : '';
       let bulletsHTML = project.bullets.map(b => `<li>${b}</li>`).join('');
@@ -331,12 +331,11 @@ function setupScrollAnimations() {
         entry.target.classList.add('active');
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.05 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
-/* Soporte Touch Swipe para Móviles */
 let touchStartX = 0;
 let touchEndX = 0;
 
