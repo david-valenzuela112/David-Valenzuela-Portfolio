@@ -8,11 +8,51 @@ const content = {
     aboutTitle: "Sobre Mí",
     aboutDesc: "Soy un estudiante de Ingeniería en Mecatrónica con experiencia práctica en manufactura, ensamblaje, pruebas y validación de sistemas mecánicos. He coordinado equipos multidisciplinarios, gestionando recursos y dado seguimiento a requerimientos y actividades de ingeniería. Destaco por mi capacidad de resolver problemas, trabajar en equipo y aprender en entornos prácticos. Cuento con experiencia académica internacional e inglés C1.",
     projectsTitle: "Proyectos Destacados",
-    certTitle: "Certificaciones & Reconocimientos",
-    certifications: [
-      { name: "Nivel de Inglés Avanzado C1", issuer: "Certificación Internacional" },
-      { name: "Premio Crash and Burn (2025)", issuer: "NASA Human Exploration Rover Challenge" },
-      { name: "Intercambio Académico Internacional", issuer: "University of Ottawa, Canada" }
+    certTitle: "Certificaciones & Documentos",
+    achievementsTitle: "Logros y Reconocimientos",
+    filterAll: "Todos",
+    filterRobotics: "Robótica",
+    filterCourses: "Cursos",
+    filterProjects: "Proyectos",
+    certificates: [
+      { name: "Certificación Universal Robots", issuer: "Universal Robots", category: "robotics", image: "cert-ur.png" },
+      { name: "Programación UR20 / UR30", issuer: "Universal Robots", category: "robotics", image: "cert-ur20-30.png" },
+      { name: "Evaluación de Riesgos Robóticos", issuer: "Universal Robots", category: "robotics", image: "cert-evaluacion-riesgos.png" },
+      { name: "Controlador CB3 Universal Robots", issuer: "Universal Robots", category: "robotics", image: "cert-cb3.png" },
+      { name: "Itinerario de Aplicaciones", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-aplicaciones.png" },
+      { name: "Itinerario Profesional", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-profesional.png" },
+      { name: "Itinerario Básico de Robótica", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-basico.png" },
+      
+      { name: "Supervised Machine Learning", issuer: "Coursera / DeepLearning.AI", category: "courses", image: "cert-supervised-ml.png" },
+      { name: "Neural Networks and Deep Learning", issuer: "Coursera / DeepLearning.AI", category: "courses", image: "cert-neural-networks.png" },
+      { name: "MATLAB Onramp", issuer: "MathWorks", category: "courses", image: "cert-matlab-onramp.png" },
+      { name: "Introduction to Linear Algebra", issuer: "MathWorks", category: "courses", image: "cert-matlab-linear-algebra.png" },
+      { name: "Symbolic Math with MATLAB", issuer: "MathWorks", category: "courses", image: "cert-matlab-symbolic-math.png" },
+      
+      { name: "Drone Testing Platform", issuer: "Proyecto de Ingeniería", category: "projects", image: "cert-drone-testing.png" },
+      { name: "Computational Fluid Dynamics (CFD)", issuer: "Simulación de Spoiler", category: "projects", image: "cert-cfd-spoiler.png" }
+    ],
+    textAchievements: [
+      {
+        title: "IELTS Academic",
+        issuer: "Nivel C1 Acreditado",
+        detail: "Dominio avanzado de idioma inglés en ámbito profesional e ingenieril."
+      },
+      {
+        title: "Diploma de Bachillerato Internacional (IB)",
+        issuer: "International Baccalaureate",
+        detail: "Programa académico riguroso con orientación de estándares globales."
+      },
+      {
+        title: "Premio 'Crash and Burn' (2025)",
+        issuer: "NASA Human Exploration Rover Challenge",
+        detail: "Reconocimiento otorgado a la perseverancia y superación técnica del equipo."
+      },
+      {
+        title: "Intercambio Académico Internacional",
+        issuer: "University of Ottawa, Canada",
+        detail: "Experiencia universitaria internacional avanzada en ingeniería."
+      }
     ],
     projects: [
       {
@@ -77,11 +117,51 @@ const content = {
     aboutTitle: "About Me",
     aboutDesc: "I'm a Mechatronics Engineering student driven by a passion for building systems that integrate hardware and software. My projects explore embedded systems, artificial intelligence, and electronic design, with a growing focus on aerospace, robotics, and intelligent automation.",
     projectsTitle: "Featured Projects",
-    certTitle: "Certifications & Awards",
-    certifications: [
-      { name: "C1 Advanced English Proficiency", issuer: "International Certification" },
-      { name: "Crash and Burn Award (2025)", issuer: "NASA Human Exploration Rover Challenge" },
-      { name: "International Academic Exchange", issuer: "University of Ottawa, Canada" }
+    certTitle: "Certifications & Documents",
+    achievementsTitle: "Honors & Achievements",
+    filterAll: "All",
+    filterRobotics: "Robotics",
+    filterCourses: "Courses",
+    filterProjects: "Projects",
+    certificates: [
+      { name: "Universal Robots Certification", issuer: "Universal Robots", category: "robotics", image: "cert-ur.png" },
+      { name: "UR20 / UR30 Programming", issuer: "Universal Robots", category: "robotics", image: "cert-ur20-30.png" },
+      { name: "Robotic Risk Assessment", issuer: "Universal Robots", category: "robotics", image: "cert-evaluacion-riesgos.png" },
+      { name: "CB3 Universal Robots Controller", issuer: "Universal Robots", category: "robotics", image: "cert-cb3.png" },
+      { name: "Applications Path", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-aplicaciones.png" },
+      { name: "Professional Path", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-profesional.png" },
+      { name: "Basic Robotics Path", issuer: "Universal Robots", category: "robotics", image: "cert-itinerario-basico.png" },
+      
+      { name: "Supervised Machine Learning", issuer: "Coursera / DeepLearning.AI", category: "courses", image: "cert-supervised-ml.png" },
+      { name: "Neural Networks and Deep Learning", issuer: "Coursera / DeepLearning.AI", category: "courses", image: "cert-neural-networks.png" },
+      { name: "MATLAB Onramp", issuer: "MathWorks", category: "courses", image: "cert-matlab-onramp.png" },
+      { name: "Introduction to Linear Algebra", issuer: "MathWorks", category: "courses", image: "cert-matlab-linear-algebra.png" },
+      { name: "Symbolic Math with MATLAB", issuer: "MathWorks", category: "courses", image: "cert-matlab-symbolic-math.png" },
+      
+      { name: "Drone Testing Platform", issuer: "Engineering Project", category: "projects", image: "cert-drone-testing.png" },
+      { name: "Computational Fluid Dynamics (CFD)", issuer: "Spoiler Airflow Simulation", category: "projects", image: "cert-cfd-spoiler.png" }
+    ],
+    textAchievements: [
+      {
+        title: "IELTS Academic",
+        issuer: "Accredited C1 Level",
+        detail: "Advanced English proficiency in professional and engineering domains."
+      },
+      {
+        title: "International Baccalaureate (IB) Diploma",
+        issuer: "International Baccalaureate",
+        detail: "Rigorous academic curriculum with global standard alignment."
+      },
+      {
+        title: "'Crash and Burn' Award (2025)",
+        issuer: "NASA Human Exploration Rover Challenge",
+        detail: "Awarded for team perseverance and technical resilience under constraints."
+      },
+      {
+        title: "International Academic Exchange",
+        issuer: "University of Ottawa, Canada",
+        detail: "Advanced international engineering coursework experience."
+      }
     ],
     projects: [
       {
@@ -139,6 +219,7 @@ const content = {
 };
 
 let currentLang = 'es';
+let activeCategory = 'all';
 
 function render() {
   const data = content[currentLang];
@@ -151,15 +232,19 @@ function render() {
   document.getElementById('about-desc').innerText = data.aboutDesc;
   document.getElementById('projects-title').innerText = data.projectsTitle;
   document.getElementById('cert-title').innerText = data.certTitle;
+  document.getElementById('achievements-title').innerText = data.achievementsTitle;
+
+  document.getElementById('filter-all').innerText = data.filterAll;
+  document.getElementById('filter-robotics').innerText = data.filterRobotics;
+  document.getElementById('filter-courses').innerText = data.filterCourses;
+  document.getElementById('filter-projects').innerText = data.filterProjects;
 
   // Render Proyectos
   const grid = document.getElementById('projects-grid');
   grid.innerHTML = '';
-
   data.projects.forEach(project => {
     const item = document.createElement('div');
     item.className = 'project-item reveal';
-
     let imgHTML = project.image ? `
       <div class="project-media">
         <img src="${project.image}" alt="${project.title}" class="project-img" loading="lazy">
@@ -177,24 +262,70 @@ function render() {
         <div class="tags-container">${tagsHTML}</div>
       </div>
     `;
-
     grid.appendChild(item);
   });
 
-  // Render Certificaciones
-  const certList = document.getElementById('cert-list');
-  certList.innerHTML = '';
-  data.certifications.forEach(cert => {
-    const certCard = document.createElement('div');
-    certCard.className = 'cert-card';
-    certCard.innerHTML = `
+  renderCertificates();
+  renderTextAchievements();
+  setupScrollAnimations();
+}
+
+function renderCertificates() {
+  const data = content[currentLang];
+  const track = document.getElementById('carousel-track');
+  track.innerHTML = '';
+
+  const filtered = activeCategory === 'all' 
+    ? data.certificates 
+    : data.certificates.filter(c => c.category === activeCategory);
+
+  filtered.forEach(cert => {
+    const card = document.createElement('div');
+    card.className = 'cert-item';
+    card.innerHTML = `
+      <div class="cert-img-box">
+        <img src="${cert.image}" alt="${cert.name}" loading="lazy">
+      </div>
       <h3>${cert.name}</h3>
       <p>${cert.issuer}</p>
     `;
-    certList.appendChild(certCard);
+    track.appendChild(card);
   });
+}
 
-  setupScrollAnimations();
+function renderTextAchievements() {
+  const data = content[currentLang];
+  const container = document.getElementById('text-achievements-grid');
+  container.innerHTML = '';
+
+  data.textAchievements.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'text-card';
+    card.innerHTML = `
+      <h4>${item.title}</h4>
+      <p>${item.issuer}</p>
+      <span>${item.detail}</span>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function filterCertificates(category) {
+  activeCategory = category;
+  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+  
+  if (category === 'all') document.getElementById('filter-all').classList.add('active');
+  if (category === 'robotics') document.getElementById('filter-robotics').classList.add('active');
+  if (category === 'courses') document.getElementById('filter-courses').classList.add('active');
+  if (category === 'projects') document.getElementById('filter-projects').classList.add('active');
+
+  renderCertificates();
+}
+
+function moveCarousel(direction) {
+  const container = document.getElementById('carousel-track');
+  const scrollAmount = 350;
+  container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 }
 
 function toggleLanguage() {
