@@ -239,7 +239,7 @@ function render() {
     grid.innerHTML = '';
     data.projects.forEach(project => {
       const item = document.createElement('div');
-      item.className = 'project-item reveal active';
+      item.className = 'project-item reveal active tilt-card';
       let imgHTML = project.image ? `<div class="project-media"><img src="${project.image}" alt="${project.title}" class="project-img" loading="lazy"></div>` : '';
       let badgeHTML = project.badge ? `<span class="apple-badge">${project.badge}</span>` : '';
       let bulletsHTML = project.bullets.map(b => `<li>${b}</li>`).join('');
@@ -260,6 +260,7 @@ function render() {
 
   renderCertificates();
   setupScrollAnimations();
+  setupTiltEffect();
 }
 
 function renderCertificates() {
@@ -277,7 +278,7 @@ function renderCertificates() {
     const card = document.createElement('div');
     
     if (cert.isTextOnly) {
-      card.className = 'cert-item text-only-card';
+      card.className = 'cert-item text-only-card tilt-card';
       card.innerHTML = `
         <div class="text-card-content">
           <span class="text-card-badge">${data.badgeAchievement}</span>
@@ -287,7 +288,7 @@ function renderCertificates() {
         </div>
       `;
     } else {
-      card.className = 'cert-item';
+      card.className = 'cert-item tilt-card';
       card.innerHTML = `
         <div class="cert-img-box">
           <img src="${cert.image}" alt="${cert.name}" loading="lazy">
@@ -299,6 +300,8 @@ function renderCertificates() {
 
     track.appendChild(card);
   });
+
+  setupTiltEffect();
 }
 
 function filterCertificates(category) {
@@ -336,6 +339,44 @@ function setupScrollAnimations() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
+/* 1. Resplandor Interactivo en Fondo seguidor de Cursor */
+function setupCursorGlow() {
+  const glow = document.getElementById('cursor-glow');
+  if (!glow) return;
+
+  window.addEventListener('mousemove', e => {
+    glow.style.left = `${e.clientX}px`;
+    glow.style.top = `${e.clientY}px`;
+  });
+}
+
+/* 2. Efecto Tilt 3D Parallax en Tarjetas al pasar el mouse */
+function setupTiltEffect() {
+  if (window.innerWidth <= 768) return; // Se desactiva en móviles por rendimiento
+
+  const cards = document.querySelectorAll('.tilt-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 25;
+      const rotateY = (centerX - x) / 25;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    });
+  });
+}
+
+/* 3. Soporte Touch Swipe para Celular */
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -360,5 +401,6 @@ function setupTouchCarousel() {
 
 document.addEventListener('DOMContentLoaded', () => {
   render();
+  setupCursorGlow();
   setupTouchCarousel();
 });
