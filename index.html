@@ -4,15 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>David Valenzuela | Mechatronics Showcase</title>
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=12">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-
-  <!-- Luz Ambiental Seguidora de Cursor -->
-  <div id="cursor-glow"></div>
+<body class="light-mode">
 
   <!-- Barra de Navegación -->
   <nav class="navbar">
@@ -25,29 +22,34 @@
         <a href="#certifications" id="nav-certifications">Certificaciones</a>
       </div>
 
-      <button id="lang-toggle" onclick="toggleLanguage()" class="apple-btn">English</button>
+      <div class="nav-actions">
+        <!-- Toggle Modo Claro / Oscuro -->
+        <button id="theme-toggle" onclick="toggleTheme()" class="icon-btn" title="Cambiar Tema">🌙</button>
+        <!-- Toggle Idioma -->
+        <button id="lang-toggle" onclick="toggleLanguage()" class="apple-btn">English</button>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
-      <div class="avatar-container floating-element">
+      <div class="avatar-container">
         <img src="foto-david-valenzuela.png" alt="David Valenzuela" class="hero-avatar">
       </div>
       <h1 class="hero-title">David Valenzuela</h1>
       <p id="hero-tagline" class="hero-subtitle"></p>
       
       <div class="institution-pills">
-        <span class="pill float-delayed"><img src="udem.png" alt="UDEM"> UDEM</span>
-        <span class="pill float-delayed-2"><img src="uottawa.png" alt="uOttawa"> uOttawa</span>
+        <span class="pill"><img src="udem.png" alt="UDEM"> UDEM</span>
+        <span class="pill"><img src="uottawa.png" alt="uOttawa"> uOttawa</span>
       </div>
     </div>
   </section>
 
   <!-- Sección Sobre Mí -->
   <section id="about" class="container reveal">
-    <div class="about-clean tilt-card">
+    <div class="about-clean">
       <h2 id="about-title" class="section-title"></h2>
       <p id="about-desc" class="about-text"></p>
     </div>
@@ -74,12 +76,12 @@
 
     <!-- Carrusel Unificado -->
     <div class="carousel-wrapper">
-      <button class="carousel-arrow prev" onclick="moveCarousel(-1)">&#10094;</button>
+      <button class="carousel-arrow prev" onclick="moveCarousel(-1)" aria-label="Anterior">&#10094;</button>
       <div class="carousel-container" id="carousel-track"></div>
-      <button class="carousel-arrow next" onclick="moveCarousel(1)">&#10095;</button>
+      <button class="carousel-arrow next" onclick="moveCarousel(1)" aria-label="Siguiente">&#10095;</button>
     </div>
   </section>
 
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
