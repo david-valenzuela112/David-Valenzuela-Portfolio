@@ -371,3 +371,41 @@ document.addEventListener('DOMContentLoaded', () => {
   render();
   setupTouchCarousel();
 });
+
+// ===================================================
+// SOPORTE DE DESLIZAMIENTO TÁCTIL (TOUCH SWIPE) PARA MÓVIL
+// ===================================================
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+function setupTouchCarousel() {
+  const track = document.getElementById('carousel-track');
+  if (!track) return;
+
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+}
+
+function handleSwipe() {
+  const swipeThreshold = 50; // Mínima distancia para considerar un swipe
+  if (touchStartX - touchEndX > swipeThreshold) {
+    // Swipe a la izquierda (Avanzar)
+    moveCarousel(1);
+  } else if (touchEndX - touchStartX > swipeThreshold) {
+    // Swipe a la derecha (Retroceder)
+    moveCarousel(-1);
+  }
+}
+
+// Inicializar eventos táctiles al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  render();
+  setupTouchCarousel();
+});
