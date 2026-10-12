@@ -4,9 +4,9 @@ const content = {
     navAbout: "Sobre mí",
     navProjects: "Proyectos Destacados",
     navCertifications: "Certificaciones",
-    heroSubtitle: "Estudiante de Ingeniería Mecatrónica enfocado en Sistemas Embebidos, Inteligencia Artificial y Robótica.",
+    heroSubtitle: "Estudiante de Ingeniería Mecatrónica enfocado en Sistemas Embebidos, Automatización y Robótica.",
     aboutTitle: "Sobre Mí",
-    aboutDesc: "Soy un estudiante de Ingeniería en Mecatrónica con experiencia práctica en manufactura, ensamblaje, pruebas y validación de sistemas mecánicos. He coordinado equipos multidisciplinarios, gestionando recursos y dado seguimiento a requerimientos y actividades de ingeniería. Destaco por mi capacidad de resolver problemas, trabajar en equipo y aprender en entornos prácticos. Cuento con experiencia académica internacional e inglés C1.",
+    aboutDesc: "Soy un estudiante de Ingeniería en Mecatrónica (4to año) con experiencia práctica en manufactura, ensamblaje, pruebas y validación de sistemas mecánicos. He coordinado equipos multidisciplinarios, gestionando recursos y dado seguimiento a requerimientos y actividades de ingeniería. Destaco por mi capacidad de resolver problemas, trabajar en equipo y aprender en entornos prácticos. Cuento con experiencia académica internacional e inglés C1.",
     projectsTitle: "Proyectos Destacados",
     certTitle: "Certificaciones & Logros",
     filterAll: "Todos",
@@ -61,7 +61,7 @@ const content = {
           "Dirigí toma de decisiones sobre diseño mecánico e integración de sistemas.",
           "Gestión de $13,000+ USD en patrocinio y recursos."
         ],
-        tags: ["Diseño Mecánico", "Manufactura", "Liderazgo"]
+        tags: ["Liderazgo", "Diseño Mecánico", "Manufactura", "Validación"]
       },
       {
         title: "Diseño de Fuente de Voltaje Regulable DC",
@@ -71,7 +71,7 @@ const content = {
           "Diseño de circuito electrónico, PCB y ensamblaje físico.",
           "Salida de voltaje estable y diseño resistente a cargas inductivas."
         ],
-        tags: ["Circuito", "PCB", "Integración"]
+        tags: ["Circuitos electrónicos", "PCB", "Integración"]
       },
       {
         title: "Detección de Grietas por Machine Learning",
@@ -110,9 +110,9 @@ const content = {
     navAbout: "About Me",
     navProjects: "Featured Projects",
     navCertifications: "Certifications",
-    heroSubtitle: "Mechatronics Engineering Student focused on Embedded Systems, AI, and Robotics.",
+    heroSubtitle: "Mechatronics Engineering Student focused on Embedded Systems, Automation, and Robotics.",
     aboutTitle: "About Me",
-    aboutDesc: "I'm a Mechatronics Engineering student driven by a passion for building systems that integrate hardware and software. My projects explore embedded systems, artificial intelligence, and electronic design, with a growing focus on aerospace, robotics, and intelligent automation.",
+    aboutDesc: "I'm a Mechatronics Engineering (4th year) student driven by a passion for building systems that integrate hardware and software. My projects explore embedded systems, artificial intelligence, and electronic design, with a growing focus on aerospace, robotics, and intelligent automation.",
     projectsTitle: "Featured Projects",
     certTitle: "Certifications & Achievements",
     filterAll: "All",
@@ -166,7 +166,7 @@ const content = {
           "Led a multidisciplinary team across design, manufacturing, and validation.",
           "Managed $13,000+ USD in sponsorship and project resources."
         ],
-        tags: ["Mechanical Design", "Manufacturing", "Leadership"]
+        tags: ["Leadership", "Mechanical Design", "Manufacturing", "Validation"]
       },
       {
         title: "Robust Adjustable DC Power Supply Design",
